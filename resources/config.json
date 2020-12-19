@@ -1,0 +1,22 @@
+{
+  "마약의 사과": {
+    "components": {
+      "item_properties": {
+        "allow_off_hand": true,
+        "animates_in_toolbar": true,
+        "can_destroy_toolbar": true,
+        "can_destroy_in_creative": true,
+        "creative_category": 1,
+        "max_stack_size": 10,
+        "use_duration": false
+      },
+      "item_icon": "apple"
+    },
+    "description": {
+      "id": 2000,
+      "meta": 0,
+      "name": "avas:poison_apple",
+      "type": "default"
+    }
+  }
+}
