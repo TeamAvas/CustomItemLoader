@@ -8,3 +8,5 @@
 |     Property Name     |     Property Type     |                    Property Description                     |
 |:---------------------:|:---------------------:|:-----------------------------------------------------------:|
 |     allow_off_hand    |        boolean        |   If the item is permitted in the offhand inventory slot.   |
+|  animates_in_toolbar  |        boolean        |                                                             |
+| can_destroy_in_creative	|      boolean        |                                                             |
