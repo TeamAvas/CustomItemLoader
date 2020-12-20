@@ -1,5 +1,6 @@
 # CustomItemLoader
 [Plugin] PocketMine-MP adds items using ItemComponent Packet.
+You can implement the items and tools you want!
 
 # Communications
 ![](https://img.shields.io/badge/Communication-Discord-blue)
