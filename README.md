@@ -29,3 +29,8 @@
 |     stacked_by_data   |        boolean        |                                                                   |
 |      use_animation    |        integer        |                                                                   |
 |      use_duration     |        integer        |                                                                   |
+
+#images
+![](./images/image1.jpg)
+![](./images/image2.jpg)
+![](./images/image3.jpg)
