@@ -53,7 +53,7 @@ class CustomItemLoader extends PluginBase implements Listener {
         $stringToIntMap->setAccessible(true);
 
         $itemTypesValues = $itemTypes->getValue(ItemTypeDictionary::getInstance());
-        foreach ($this->config as $koreanName => $itemData) {
+        foreach ($this->config as $key => $itemData) {
             $name = (string)$itemData["description"]["name"];
             $id = (int)$itemData["description"]["id"];
             $meta = (int)$itemData["description"]["meta"];
@@ -63,9 +63,8 @@ class CustomItemLoader extends PluginBase implements Listener {
             $coreToNetValues[$entry->getNumericId()] = $runtimeId;
             $netToCoreValues[$runtimeId] = $entry->getNumericId();
 
-            ItemFactory::registerItem($item = (($itemData["description"]["type"] === "default") ? new CustomItem($id, $meta, $koreanName) : new CustomDurableItem($id, $meta, $koreanName, $itemData["components"]["item_components"]["durability"])));
+            ItemFactory::registerItem($item = (($itemData["description"]["type"] === "default") ? new CustomItem($id, $meta, $key) : new CustomDurableItem($id, $meta, $key, $itemData["components"]["item_components"]["durability"])));
             Item::addCreativeItem($item);
-            var_dump($itemData["components"]["item_icon"]);
         }
         $simpleNetToCoreMap->setValue(ItemTranslator::getInstance(), $netToCoreValues);
         $simpleCoreToNetMap->setValue(ItemTranslator::getInstance(), $coreToNetValues);
@@ -81,13 +80,13 @@ class CustomItemLoader extends PluginBase implements Listener {
         $player = $event->getPlayer();
         $entries = [];
 
-        foreach ($this->config as $koreanName => $itemData) {
+        foreach ($this->config as $key => $itemData) {
             $name = (string)$itemData["description"]["name"];
             $id = (int)$itemData["description"]["id"];
 
             $entries[] = new ItemComponentPacketEntry($name, new CompoundTag("", [
                 new CompoundTag("components", [
-                    new CompoundTag("minecraft:display_name", [new StringTag("value", $koreanName)]),
+                    new CompoundTag("minecraft:display_name", [new StringTag("value", $key)]),
                     new CompoundTag("minecraft:icon", [new StringTag("texture", (string)($itemData["components"]["item_icon"] ?? "apple")),]),
                     new CompoundTag("item_properties", [
                         new ByteTag("allow_off_hand", (int)($itemData["components"]["item_properties"]["allow_off_hand"] ?? false)),
@@ -104,7 +103,7 @@ class CustomItemLoader extends PluginBase implements Listener {
                     ]),
                 ]),
                 new ShortTag("id", $id),
-                new StringTag("name", $koreanName)
+                new StringTag("name", $key)
             ]));
         }
         $player->sendDataPacket(ItemComponentPacket::create($entries));
