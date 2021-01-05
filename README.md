@@ -2,6 +2,8 @@
 [Plugin] PocketMine-MP adds items using ItemComponent Packet.
 <br>
 
+FIREWORKS!!!
+
 # Description
 You can implement the items and tools you want!
 <br>
