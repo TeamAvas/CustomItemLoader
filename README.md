@@ -7,9 +7,6 @@ You can implement the items and tools you want!
 <br>
 To implement this, I referred to [CustomItem](https://github.com/alvin0319/CustomItem)!
 
-# Communications
-![](https://img.shields.io/badge/Communication-Discord-blue)
-
 # Properties
 |     Property Name     |     Property Type     |                         Property Description                     |
 |:---------------------:|:---------------------:|:-----------------------------------------------------------------:|
