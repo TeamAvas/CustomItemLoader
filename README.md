@@ -2,6 +2,8 @@
 [Plugin] PocketMine-MP adds items using ItemComponent Packet.
 <br>
 
+# This plugin is no longer maintained. For updated version, visit [alvin0319/CustomItemLoader](https://github.com/alvin0319/CustomItemLoader) instead.
+
 # Description
 You can implement the items and tools you want!
 <br>
